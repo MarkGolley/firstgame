@@ -1,0 +1,26 @@
+from random import randint, choice
+
+print("Welcome to GUESS THE RANDOM NUMBER!!!!")
+choiceStart = input("What would you like the start of the range the computer will set the random number to be??")
+start = int(choiceStart)
+
+choiceEnd = input("What would you like the end of the range the computer will set the random number to be??")
+end = int(choiceEnd)
+
+value = randint(start, end)
+
+print("The game has started, the computer has selected a random number between", start, "and", end, "so it's time for your guesses")
+
+guess = None
+
+while guess != value:
+    textGuess = input("Please input your guess:")
+    guess = int(textGuess)
+    if guess > value:
+        print("Your guess is higher than the value, guess lower")
+    elif guess < value:
+        print("Your guess is lower than the value, guess higher")
+        
+print("You guessed the right number!")
+
+print("Game Over")
